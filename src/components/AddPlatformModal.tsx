@@ -72,7 +72,7 @@ export function AddPlatformModal({
 
   const compressImage = (base64: string): Promise<string> => {
     return new Promise((resolve) => {
-      const img = new Image();
+      const img = document.createElement("img");
       img.onload = () => {
         const canvas = document.createElement("canvas");
         const maxWidth = 800;
