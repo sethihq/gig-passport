@@ -81,7 +81,9 @@ export function PlatformStamp({
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
-                    target.parentElement?.innerHTML = `<span class="text-lg sm:text-xl">${platform.emoji}</span>`;
+                    if (target.parentElement) {
+                      target.parentElement.innerHTML = `<span class="text-lg sm:text-xl">${platform.emoji}</span>`;
+                    }
                   }}
                 />
               </div>
