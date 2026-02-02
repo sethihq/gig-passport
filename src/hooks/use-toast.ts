@@ -41,8 +41,8 @@ export function useToast() {
     return toast({ title, description, type: "loading", duration: 60000 });
   };
 
-  const dismiss = (id: string) => {
-    toastManager.remove(id);
+  const dismiss = (_id: string) => {
+    // Toast auto-dismisses; manual dismiss not supported by base-ui
   };
 
   return {
@@ -73,7 +73,7 @@ export const toast = {
   loading: (title: string, description?: string) => {
     return toastManager.add({ title, description, type: "loading", timeout: 60000 });
   },
-  dismiss: (id: string) => {
-    toastManager.remove(id);
+  dismiss: (_id: string) => {
+    // Toast auto-dismisses; manual dismiss not supported by base-ui
   },
 };
