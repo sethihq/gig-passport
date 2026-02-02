@@ -95,7 +95,7 @@ export function PassportCard({ passport, compact = false }: PassportCardProps) {
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
-                            target.parentElement!.innerHTML = `<span class="text-sm">${platform.emoji}</span>`;
+                            target.parentElement?.innerHTML = `<span class="text-sm">${platform.emoji}</span>`;
                           }}
                         />
                       </div>

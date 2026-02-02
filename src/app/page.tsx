@@ -446,7 +446,9 @@ export default function Home() {
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = "none";
-                            target.parentElement!.innerHTML = `<span class="text-sm">${p.emoji}</span>`;
+                            if (target.parentElement) {
+                              target.parentElement.innerHTML = `<span class="text-sm">${p.emoji}</span>`;
+                            }
                           }}
                         />
                       </div>

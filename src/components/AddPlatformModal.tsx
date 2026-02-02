@@ -164,7 +164,7 @@ export function AddPlatformModal({
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = "none";
-                          target.parentElement!.innerHTML = `<span class="text-lg">${platform.emoji}</span>`;
+                          target.parentElement?.innerHTML = `<span class="text-lg">${platform.emoji}</span>`;
                         }}
                       />
                     </div>
@@ -195,7 +195,7 @@ export function AddPlatformModal({
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = "none";
-                      target.parentElement!.innerHTML = `<span class="text-2xl">${selectedPlatform.emoji}</span>`;
+                      target.parentElement?.innerHTML = `<span class="text-2xl">${selectedPlatform.emoji}</span>`;
                     }}
                   />
                 </div>
