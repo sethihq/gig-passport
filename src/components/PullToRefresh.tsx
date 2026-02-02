@@ -54,7 +54,8 @@ export function PullToRefresh({
     pullDistance.set(pull);
 
     // Haptic feedback when crossing threshold
-    if (pull >= THRESHOLD && pullDistance.getPrevious() < THRESHOLD) {
+    const previous = pullDistance.getPrevious() ?? 0;
+    if (pull >= THRESHOLD && previous < THRESHOLD) {
       haptic.light();
     }
   }, [isPulling, disabled, isRefreshing, pullDistance]);
